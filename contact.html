@@ -1,0 +1,99 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 靖江市金菊机械配件有限公司</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        body { opacity: 0; visibility: hidden; animation: pageFadeIn 1s ease forwards; }
+        @keyframes pageFadeIn { to { opacity: 1; visibility: visible; } }
+
+        .navbar {
+            background: #fff; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;
+            transition: all 0.3s ease; width: 100%;
+        }
+        .navbar.scrolled { padding: 5px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-wrapper {
+            max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 10px; padding: 0 20px;
+        }
+        .logo { width: 360px; height: 120px; display: flex; align-items: center; justify-content: center; }
+        .logo img { width: 100%; height: 100%; object-fit: contain; }
+        .nav-menu { display: flex; list-style: none; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .nav-menu li a {
+            text-decoration: none; color: #333; font-size: 16px; padding: 8px 16px;
+            border-radius: 4px; transition: all 0.3s ease;
+        }
+        .nav-menu li a:hover { color: #1890ff; background: rgba(24,144,255,0.1); transform: translateY(-2px); }
+        .nav-menu li a.active { color: #1890ff; background: rgba(24,144,255,0.1); font-weight: 500; }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .page-title { font-size: 32px; color: #1890ff; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 2px solid #1890ff; font-weight: 600; }
+        .contact-info { display: flex; gap: 40px; flex-wrap: wrap; }
+        .contact-details { flex: 1; min-width: 300px; line-height: 2.2; font-size: 17px; color: #555; }
+        .contact-details strong { color: #1890ff; min-width: 80px; display: inline-block; }
+        .contact-img { flex: 1; min-width: 300px; max-height: 500px; background: #f5f5f5; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+        .contact-img img { width: 100%; height: auto; display: block; }
+
+        .footer { background: #f5f8ff; padding: 20px 0; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #e8f4ff; }
+        .footer:hover { background: #e8f4ff; color: #333; }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { padding: 10px; gap: 10px; }
+            .logo { width: 200px; height: 80px; }
+            .nav-menu { gap: 10px; }
+            .nav-menu li a { font-size: 14px; padding: 6px 10px; }
+            .page-title { font-size: 26px; }
+            .contact-info { flex-direction: column; gap: 20px; }
+            .contact-details { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-wrapper">
+            <div class="logo"><img src="img/logo.jpg" alt="LOGO" loading="lazy"></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">联系我们</h1>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p><strong>公司名称：</strong>靖江市金菊机械配件有限公司</p>
+                <p><strong>联系地址：</strong>江苏省靖江市生祠镇红英村沈家埭59号</p>
+                <p><strong>手机号码：</strong>18652386681</p>
+                <p><strong>电子邮箱：</strong>41581700@qq.com</p>
+                <p><strong>营业时间：</strong>周一至周五 8:00-18:00</p>
+            </div>
+            <div class="contact-img">
+                <img src="img/map.jpg" alt="公司地图">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 靖江市金菊机械配件有限公司 版权所有</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+        });
+    </script>
+</body>
+</html>

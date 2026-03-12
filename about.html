@@ -1,0 +1,96 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 靖江市金菊机械配件有限公司</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        body { opacity: 0; visibility: hidden; animation: pageFadeIn 1s ease forwards; }
+        @keyframes pageFadeIn { to { opacity: 1; visibility: visible; } }
+
+        /* 导航栏（纯样式） */
+        .navbar {
+            background: #fff; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;
+            transition: all 0.3s ease; width: 100%;
+        }
+        .navbar.scrolled { padding: 5px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-wrapper {
+            max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 10px; padding: 0 20px;
+        }
+        .logo { width: 360px; height: 120px; display: flex; align-items: center; justify-content: center; }
+        .logo img { width: 100%; height: 100%; object-fit: contain; }
+        .nav-menu { display: flex; list-style: none; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .nav-menu li a {
+            text-decoration: none; color: #333; font-size: 16px; padding: 8px 16px;
+            border-radius: 4px; transition: all 0.3s ease;
+        }
+        .nav-menu li a:hover { color: #1890ff; background: rgba(24,144,255,0.1); transform: translateY(-2px); }
+        .nav-menu li a.active { color: #1890ff; background: rgba(24,144,255,0.1); font-weight: 500; }
+
+        /* 页面内容 */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; opacity: 0; transform: translateY(20px); animation: containerFadeIn 1s ease 0.3s forwards; }
+        @keyframes containerFadeIn { to { opacity: 1; transform: translateY(0); } }
+        .page-title { font-size: 32px; color: #1890ff; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 2px solid #1890ff; font-weight: 600; text-align: center; }
+        .about-content { font-size: 17px; line-height: 1.9; color: #555; }
+        .about-content p { margin-bottom: 20px; text-indent: 2em; text-align: justify; }
+        .highlight, strong, b { color: #1890ff !important; font-weight: 600 !important; }
+
+        /* 底部 */
+        .footer { background: #f5f8ff; padding: 20px 0; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #e8f4ff; }
+        .footer:hover { background: #e8f4ff; color: #333; }
+
+        /* 移动端 */
+        @media (max-width: 768px) {
+            .nav-wrapper { padding: 10px; gap: 10px; }
+            .logo { width: 200px; height: 80px; }
+            .nav-menu { gap: 10px; }
+            .nav-menu li a { font-size: 14px; padding: 6px 10px; }
+            .page-title { font-size: 26px; }
+            .about-content { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-wrapper">
+            <div class="logo"><img src="img/logo.jpg" alt="LOGO" loading="lazy"></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html" class="active">关于我们</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">关于我们</h1>
+        <div class="about-content">
+            <p>靖江市金菊机械配件有限公司成立于2023年，是一家专注于<span class="highlight">模具设计制造、泵阀配件研发生产、塑胶制品定制加工与销售</span>的现代化制造企业，拥有大型注塑机、硫化机等全套生产设备，可实现从模具研发设计到橡塑制品成型交付的全流程一体化服务。</p>
+            <p>公司坐落于江苏省靖江市，区位优势显著，水陆交通便捷，为产品高效交付提供了坚实保障。自成立以来，公司始终秉持 <span class="highlight">“质量第一、客户至上”</span> 的经营理念，依托先进的生产设备、精湛的核心工艺与严苛的全流程质量管控体系，为客户打造高品质、高适配的各类产品，用专业实力筑牢合作根基。</p>
+            <p>公司主营产品及定制化服务广泛应用于家用电器、工程机械、汽车制造、船舶重工等多个领域，拥有一支经验丰富的研发设计与生产制造团队，可精准对接客户个性化需求，完成各类非标模具、泵阀配件及塑胶制品的定制开发与批量生产，全方位满足客户的多样化制造需求。</p>
+            <p>未来，公司将继续坚守 <span class="highlight">“创新、诚信、共赢”</span> 的核心价值观，持续深耕模具与橡塑制品制造领域，不断精进工艺技术、提升产品品质与服务水平，致力于成为行业内值得信赖的模具设计制造及塑胶制品配套供应商。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 靖江市金菊机械配件有限公司 版权所有</p>
+    </div>
+
+    <script>
+        // 仅滚动改变导航样式
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+        });
+    </script>
+</body>
+</html>

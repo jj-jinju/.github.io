@@ -1,0 +1,330 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 靖江市金菊机械配件有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        /* 全局淡入动画（无点击干扰） */
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        body {
+            opacity: 0;
+            visibility: hidden;
+            animation: pageFadeIn 1s ease forwards;
+            -webkit-animation: pageFadeIn 1s ease forwards;
+        }
+        @keyframes pageFadeIn {
+            to { opacity: 1; visibility: visible; }
+        }
+        @-webkit-keyframes pageFadeIn {
+            to { opacity: 1; visibility: visible; }
+        }
+
+        /* ===== 导航栏（纯样式，无JS点击干预）===== */
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .navbar.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .nav-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 0 20px;
+        }
+        .logo {
+            width: 360px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .nav-menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .nav-menu li a:hover {
+            color: #1890ff;
+            background: rgba(24, 144, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .nav-menu li a.active {
+            color: #1890ff;
+            background: rgba(24, 144, 255, 0.1);
+            font-weight: 500;
+        }
+
+        /* banner区域 */
+        .banner-wrap {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .banner {
+            width: 100%;
+            height: 400px;
+            background: #f5f8ff;
+            overflow: hidden;
+        }
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05);
+            transition: transform 8s ease;
+        }
+        .banner:hover .banner-img {
+            transform: scale(1);
+        }
+        .banner-text {
+            text-align: center;
+            padding: 30px 20px;
+            animation: bannerTextIn 1s ease 0.5s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes bannerTextIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .banner-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1890ff;
+            font-weight: 700;
+        }
+        .banner-desc {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 核心业务区 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 32px;
+            color: #1890ff;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #1890ff;
+            font-weight: 600;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease;
+        }
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .business-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .business-item {
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .business-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .business-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .business-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background: #f5f8ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .business-img img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        .business-name {
+            font-size: 20px;
+            color: #1890ff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .business-desc {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* 底部版权区 */
+        .footer {
+            background: #f5f8ff;
+            padding: 20px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e8f4ff;
+        }
+        .footer:hover {
+            background: #e8f4ff;
+            color: #333;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper { padding: 10px; gap: 10px; }
+            .logo { width: 200px; height: 80px; }
+            .nav-menu { gap: 10px; }
+            .nav-menu li a { font-size: 14px; padding: 6px 10px; }
+            .banner { height: 200px; }
+            .banner-title { font-size: 24px; }
+            .banner-desc { font-size: 14px; }
+            .business-list { grid-template-columns: 1fr; }
+            .section-title { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="LOGO" loading="lazy">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner-wrap">
+        <div class="banner">
+            <img src="img/banner1.jpg" class="banner-img" alt="公司宣传图" loading="lazy">
+        </div>
+        <div class="banner-text">
+            <h2 class="banner-title">靖江市金菊机械配件有限公司</h2>
+            <p class="banner-desc">专注于模具设计制造、泵阀配件研发生产、塑胶制品定制加工<br>全流程一体化服务</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title" id="sectionTitle">核心业务</h2>
+        <div class="business-list">
+            <div class="business-item" data-delay="0.1">
+                <div class="business-img"><img src="img/mj.jpg" alt="模具设计制造"></div>
+                <h3 class="business-name">模具设计制造</h3>
+                <p class="business-desc">专业的模具研发设计团队，可根据客户需求定制各类非标模具。</p>
+            </div>
+            <div class="business-item" data-delay="0.2">
+                <div class="business-img"><img src="img/bf.jpg" alt="泵阀配件研发生产"></div>
+                <h3 class="business-name">泵阀配件研发生产</h3>
+                <p class="business-desc">生产各类泵阀配件，耐腐蚀、耐高温，广泛应用于工程机械等领域。</p>
+            </div>
+            <div class="business-item" data-delay="0.3">
+                <div class="business-img"><img src="img/sj.jpg" alt="塑胶制品定制加工"></div>
+                <h3 class="business-name">塑胶制品定制加工</h3>
+                <p class="business-desc">拥有大型注塑机、硫化机，支持批量定制加工，品质管控严格。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 靖江市金菊机械配件有限公司 版权所有</p>
+    </div>
+
+    <script>
+        // 仅保留滚动时改变导航栏样式和滚动显示动画，无任何点击干预
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // 滚动显示动画（不影响导航）
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'sectionTitle') {
+                            entry.target.classList.add('visible');
+                        } else if (entry.target.classList.contains('business-item')) {
+                            const delay = entry.target.dataset.delay || 0;
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, delay * 300);
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(document.getElementById('sectionTitle'));
+            document.querySelectorAll('.business-item').forEach(item => observer.observe(item));
+        });
+    </script>
+</body>
+</html>

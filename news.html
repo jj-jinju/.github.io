@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态 - 靖江市金菊机械配件有限公司</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft Yahei", sans-serif; }
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        body { opacity: 0; visibility: hidden; animation: pageFadeIn 1s ease forwards; }
+        @keyframes pageFadeIn { to { opacity: 1; visibility: visible; } }
+
+        .navbar {
+            background: #fff; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;
+            transition: all 0.3s ease; width: 100%;
+        }
+        .navbar.scrolled { padding: 5px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-wrapper {
+            max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 10px; padding: 0 20px;
+        }
+        .logo { width: 360px; height: 120px; display: flex; align-items: center; justify-content: center; }
+        .logo img { width: 100%; height: 100%; object-fit: contain; }
+        .nav-menu { display: flex; list-style: none; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .nav-menu li a {
+            text-decoration: none; color: #333; font-size: 16px; padding: 8px 16px;
+            border-radius: 4px; transition: all 0.3s ease;
+        }
+        .nav-menu li a:hover { color: #1890ff; background: rgba(24,144,255,0.1); transform: translateY(-2px); }
+        .nav-menu li a.active { color: #1890ff; background: rgba(24,144,255,0.1); font-weight: 500; }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .page-title { font-size: 32px; color: #1890ff; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 2px solid #1890ff; font-weight: 600; }
+        .news-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+        .news-item { background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 20px; transition: all 0.3s ease; }
+        .news-item:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .news-date { color: #999; font-size: 14px; margin-bottom: 10px; }
+        .news-title { font-size: 18px; color: #333; margin-bottom: 12px; transition: color 0.3s ease; }
+        .news-item:hover .news-title { color: #1890ff; }
+        .news-desc {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;                /* 移除默认边距 */
+            text-indent: 2em;          /* 首行缩进2字符 */
+        }
+        .news-item .news-desc + .news-desc {
+            margin-top: 0.8em;         /* 同一新闻内多个段落之间的间距 */
+        }
+
+        .footer { background: #f5f8ff; padding: 20px 0; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #e8f4ff; }
+        .footer:hover { background: #e8f4ff; color: #333; }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { padding: 10px; gap: 10px; }
+            .logo { width: 200px; height: 80px; }
+            .nav-menu { gap: 10px; flex-wrap: wrap; }
+            .nav-menu li a { font-size: 14px; padding: 6px 10px; }
+            .page-title { font-size: 26px; }
+            .news-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-wrapper">
+            <div class="logo"><img src="img/logo.jpg" alt="LOGO" loading="lazy"></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="news.html" class="active">新闻动态</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">新闻动态</h1>
+        <div class="news-list">
+            <!-- 第一条新闻拆分为两个段落，并去除原文多余空格，实现分段和首行缩进 -->
+            <div class="news-item">
+                <div class="news-date">2025-10-1</div>
+                <h3 class="news-title">产能翻倍・智造领航，我厂全新生产基地正式投产！</h3>
+                <p class="news-desc">2025 年二季度，为匹配市场高速增长、满足客户更高标准的生产需求，我公司斥资扩建上千平方米现代化生产厂房，全面完成产能扩容与设备迭代，以全新姿态领跑精密注塑领域！</p>
+                <p class="news-desc">新厂房按照高端智造标准规划建设，空间更开阔、布局更科学、物流更高效，彻底告别产能瓶颈。全线配备行业最先进注塑设备，精度更高、稳定性更强、效率更快，从模具适配到成品产出全流程提质增效，产品一致性与良品率再攀新高。</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">2025-01-10</div>
+                <h3 class="news-title">公司新增 3 台大型高精度注塑机 产能显著提升</h3>
+                <p class="news-desc">为进一步满足市场订单需求，提升综合制造实力，公司于 2025 年初正式引进 3 台大型高精度注塑机并顺利投产。新设备采用先进控制技术，加工精度更高、成型速度更快，有效提升塑胶产品一致性与良品率，优化生产工艺与产品品质。</p>
+ <p class="news-desc">本次设备升级强化了大尺寸、高精度塑件生产能力，整体产能较此前大幅提升 30%，为快速交付、批量生产提供坚实保障。未来，公司将持续优化设备与生产管理，以高效产能、稳定品质、快捷交期服务新老客户，共创更高价值。</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">2024-10-05</div>
+                <h3 class="news-title">喜报｜绿色智造再获权威认可！我厂顺利通过环评审批，各项环保检测均达标</h3>
+              <p class="news-desc">2024 年，我厂严格遵照国家生态环境法律法规与环保标准，全面升级改造环保治理体系，完成废气、废水、噪声、地下水等全项环境检测，各项指标均符合国家标准，并顺利通过环评审批，获得生态环境部门正式批复，同时完成环保竣工验收，生产经营合法合规。</p>
+  <p class="news-desc">工厂始终坚持绿色生产、合规经营，严守环保底线，不断完善环境管理体系。未来，我们将持续以更高标准规范运营，走安全、环保、高质量发展之路，为客户提供更安心、更可靠、更可持续的注塑产品与服务。</p>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 靖江市金菊机械配件有限公司 版权所有</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+        });
+    </script>
+</body>
+</html>

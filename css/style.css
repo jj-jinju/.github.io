@@ -1,0 +1,88 @@
+﻿/* 全局样式：清除默认的 body 和 html 边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 盒模型优化：让元素宽高包含边框 */
+}
+
+/* 基础设置：body 和 html 尺寸归一化 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* 导航栏-LOGO区域：蓝色背景、文字白色、弹性布局居中，适配不同屏幕 */
+nav {
+    background-color: #0069D9; /* 蓝色统一 */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* LOGO和菜单垂直居中 */
+    padding: 0; /* 清除导航栏默认内边距，让LOGO顶满左侧 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 999;
+    height: 75px; /* LOGO高度统一，固定导航栏高度 */
+    width: 100%; /* 确保导航栏占满屏幕宽度 */
+}
+
+/* LOGO样式-全屏适配，还原图片原始比例且透明背景 */
+nav .logo {
+    margin-left: 0; /* LOGO贴左，无外间距 */
+    padding-left: 0; /* LOGO贴左，无内间距 */
+}
+nav .logo img {
+    width: 320px;
+    height: 160px;
+    padding: 0;
+    margin: 0;
+    background: transparent; /* 去除图片背景色 */
+    object-fit: contain;
+    border: none;
+    filter: drop-shadow(0 0 1px rgba(255,255,255,0.5)); /* 细微白边提升辨识度 */
+    display: block; /* 消除图片默认的行内间隙 */
+}
+
+/* 导航菜单样式 - 水平排列，避免影响LOGO布局 */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* 菜单右侧留间距，不挤压LOGO */
+}
+
+/* 仅在移动端屏幕（宽度小于768px）生效 */
+@media (max-width: 768px) {
+  /* 1. 导航菜单适配：垂直排列 */
+  nav ul {
+    flex-direction: column; /* 菜单垂直展示 */
+    padding: 10px;
+    margin-right: 0; /* 移动端取消右侧间距 */
+  }
+  nav ul li {
+    margin: 8px 0; /* 增加垂直间距 */
+  }
+
+  /* 2. 图片自适应（防止图片超出手机屏幕） */
+  nav .logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 75px; /* 适配导航栏高度 */
+  }
+
+  /* 3. 页面容器适配（左右留边，不贴紧屏幕） */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* 4. 标题字号适配（缩小，适配移动端） */
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
